@@ -20,7 +20,9 @@
     "hubot-xkcd": "*",
     "hubot-nationalrail": "*",
     "hubot-devops-reactions": "*",
-    "hubot-darksky": "*"
+    "hubot-darksky": "*",
+    "flip": "~0.1.0",
+    "xml2js": "0.1.14"
   },
   "engines": {
     "node": "0.10.x"
