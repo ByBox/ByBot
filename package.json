@@ -18,7 +18,9 @@
     "hubot-scripts": "^2.16.1",
     "hubot-shipit": "^0.2.0",
     "hubot-xkcd": "*",
-    "hubot-nationalrail": "*"
+    "hubot-nationalrail": "*",
+    "hubot-devops-reactions": "*",
+    "hubot-darksky": "*"
   },
   "engines": {
     "node": "0.10.x"

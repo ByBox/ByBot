@@ -9,5 +9,7 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-xkcd",
-  "hubot-nationalrail"
+  "hubot-nationalrail",
+  "hubot-devops-reactions",
+  "hubot-darksky"
 ]
