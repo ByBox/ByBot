@@ -11,5 +11,6 @@
   "hubot-xkcd",
   "hubot-nationalrail",
   "hubot-devops-reactions",
-  "hubot-darksky"
+  "hubot-darksky",
+  "hubot-youtube"
 ]
