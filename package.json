@@ -23,7 +23,8 @@
     "hubot-darksky": "*",
     "flip": "~0.1.0",
     "xml2js": "~0.4.9",
-    "hubot-youtube": "*"
+    "hubot-youtube": "*",
+    "hubot-business-cat": "*"
   },
   "engines": {
     "node": "0.10.x"
