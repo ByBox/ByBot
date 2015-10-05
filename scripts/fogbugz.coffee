@@ -5,7 +5,7 @@
 #   "xml2js": "0.1.14"
 #
 # Configuration:
-#   HUBOT_FOGBUGZ_BASE_URL
+#   HUBOT_FOGBUGZ_HOST
 #   HUBOT_FOGBUGZ_TOKEN
 #
 # Commands:
@@ -14,7 +14,7 @@
 #
 # Notes:
 #   
-#   curl 'HUBOT_FOGBUGZ_BASE_URL/api.asp' -F'cmd=logon' # -F'email=EMAIL' -F'password=PASSWORD'
+#   curl 'https://HUBOT_FOGBUGZ_HOST/api.asp' -F'cmd=logon' # -F'email=EMAIL' -F'password=PASSWORD'
 #   and copy the data inside the CDATA[...] block.
 #
 #   Tokens only expire if you explicitly log them out, so you should be able to
@@ -28,9 +28,9 @@ env = process.env
 util = require 'util'
 
 module.exports = (robot) ->
-  if env.HUBOT_FOGBUGZ_BASE_URL and env.HUBOT_FOGBUGZ_TOKEN
+  if env.HUBOT_FOGBUGZ_HOST and env.HUBOT_FOGBUGZ_TOKEN
     robot.hear /\b(?:bugz?|case|FB)\s*(\d+)/i, (msg) ->
-      msg.http("#{env.HUBOT_FOGBUGZ_BASE_URL}/api.asp")
+      msg.http("https://#{env.HUBOT_FOGBUGZ_HOST}/api.asp")
         .query
           cmd: "search"
           token: env.HUBOT_FOGBUGZ_TOKEN
@@ -48,7 +48,7 @@ module.exports = (robot) ->
               bug = json.response.cases?[0].case[0]
               if bug
                 details = [
-                  "#{env.HUBOT_FOGBUGZ_BASE_URL}/?#{bug.ixBug[0]}"
+                  "https://#{env.HUBOT_FOGBUGZ_HOST}/?#{bug.ixBug[0]}"
                   "  FogBugz #{bug.ixBug[0]}: #{bug.sTitle[0]}"
                   "  Priority: #{bug.ixPriority[0]} - #{bug.sPriority[0]}"
                   "  Project: #{bug.sProject[0]} (#{bug.sArea[0]})"
