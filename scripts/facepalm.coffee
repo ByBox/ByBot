@@ -15,16 +15,8 @@
 module.exports = (robot) ->
   robot.hear /facepalm/i, (msg) ->
     # Randomly use facepalm.org or a Google Image search for "facepalm".
-    if msg.random([0, 1])
-      facepalmMe msg, (url) ->
-        msg.send url
-    else
-      imageMe msg, "facepalm", (url) ->
-        msg.send url
-
-facepalmMe = (msg, cb) ->
-  msg.http('http://facepalm.org/img.php').get() (err, res, body) ->
-    cb "http://facepalm.org/#{res.headers['location']}"
+    imageMe msg, "facepalm", (url) ->
+      msg.send url
 
 imageMe = (msg, query, cb) ->
   msg.http('http://ajax.googleapis.com/ajax/services/search/images')
